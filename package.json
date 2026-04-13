@@ -23,10 +23,12 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/sqlite3": "^3.1.11",
+    "prisma": "^7.7.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.2"
   },
   "dependencies": {
+    "@prisma/client": "^7.7.0",
     "express": "^5.2.1",
     "sqlite3": "^6.0.1"
   }
