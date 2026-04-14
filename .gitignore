@@ -134,3 +134,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+/src/generated/prisma
+
+# Prisma config compiled artifact (não commitar - gerado pelo tsc antes de rootDir ser restringido ao src/)
+prisma.config.js
