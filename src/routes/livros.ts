@@ -29,10 +29,20 @@ router.post("/", async (req: Request, res: Response) => {
             });
         }
 
+        const generoExistente = await db.genero.findUnique({
+            where: { id: Number(generoId) }
+        });
+
+        if (!generoExistente) {
+            return res.status(404).json({
+                erro: 'Gênero não encontrado'
+            });
+        }
+
         const livro = await db.livro.create({
             data: {
                 titulo,
-                generoId
+                generoId: Number(generoId)
             },
             include: {
                 genero: true
@@ -68,11 +78,21 @@ router.put("/:id", async (req: Request, res: Response) => {
             });
         }
 
+        const generoExistente = await db.genero.findUnique({
+            where: { id: Number(generoId) }
+        });
+
+        if (!generoExistente) {
+            return res.status(404).json({
+                erro: 'Gênero não encontrado'
+            });
+        }
+
         const livroAtualizado = await db.livro.update({
             where: { id },
             data: {
                 titulo,
-                generoId
+                generoId: Number(generoId)
             },
             include: {
                 genero: true
