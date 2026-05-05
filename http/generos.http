@@ -10,7 +10,7 @@ POST {{url}}
 Content-Type: application/json
 
 {
-    "nome": "Ação"
+    "nome": "Policial"
 }
 
 ### Atualizar um gênero

@@ -1,0 +1,24 @@
+@url = http://localhost:3000/livros
+
+GET {{url}}
+
+### buscar um livro
+GET {{url}}/1
+
+### Criar um novo livro
+POST {{url}}
+Content-Type: application/json
+
+{
+    "titulo": "O Senhor dos Anéis",
+    "generoId": 1
+}
+
+### Atualizar um livro
+PUT {{url}}/1
+Content-Type: application/json
+
+{
+    "titulo": "Teste",
+    "generoId": 1
+}

@@ -15,6 +15,17 @@ datasource db {
 model Genero {
   id   Int    @id @default(autoincrement())
   nome String
+  livros Livro[]
 
   @@map("generos")
+}
+
+model Livro {
+  id Int @id @default(autoincrement())
+  titulo String
+
+  generoId Int
+  genero Genero @relation(fields: [generoId], references: [id])
+
+  @@map("livros")
 }
